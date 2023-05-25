@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+:root{
+    --hard-color:#FF9D61;
+    --soft-color:#FFF0E7;
+    --too-soft-color:#FFF7F1;
+    --white-color:#FFFFFF;
+    --grey-color:#F7F8F8;
+    --black-color:#000000;
+    --h1-font:3.2vw;
+    --h2-font:1.5vw;
+    --p-font:1.0vw;
+
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+.success, .danger{
+    position: absolute;
+    top: -20%;
+    left: 32.5%;
+    width: 30%;
+    height: 8%;
+    font-size: 1.2vw;
+    background-color: rgba(120, 255, 199, 0.637);
+    border: 2px solid rgb(49, 255, 176);
+    backdrop-filter: blur(12px);
+    z-index: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1% 2%;
+    color: var(--white-color);
+    border-radius: 8px;
+   
+    animation-name: slide-down;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+
+    
+}
+.danger{
+    background-color: rgba(255, 120, 120, 0.622);
+    border: 2px solid rgb(255, 106, 106);
+}
+.success{
+    background-color: rgba(120, 255, 199, 0.637);
+    border: 2px solid rgb(49, 255, 176);
+}
+
+/* define animation */
+@keyframes slide-down {
+    0% {
+      top: -20%; /* start position */
+      opacity: 0;
+    }
+    20%{
+        top:1%;
+        opacity: 1;
+    }
+    90%{
+     top: 1%;
+     opacity: 1;
+    }
+    100% {
+      top: -20%; /* end position */
+      opacity: 0;
+    }
+  }
+/* orange side */
+.orange{
+    width: 23%;
+    height: 95%;
+    background-color: var(--soft-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 1% 1%;
+    justify-content: space-between;
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+    margin-left: -1%;
+}
+.orange h1{
+    font-size: 2.3vw;
+    width: 100%;
+    height: 10%;
+    padding-top: 5%;
+    color: rgb(0, 0, 0);
+    opacity: 0.8;
+    margin-bottom: 10%;
+}
+.orange .text-center{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding-left: 2%;
+}
+.orange .text-center h2{
+    font-size: 2.7vw;
+    margin-bottom: 4%;
+}
+.orange .text-center p{
+    font-size:1.3vw;
+    opacity: 0.6;
+    padding-left: 4%;
+}
+.orange .opinion{
+    margin-left: 2%;
+    margin-bottom: 7%;
+    width: 95%;
+    height: 26%;
+    border-radius: 12px;
+    background-color: var(--white-color);
+    overflow: hidden;
+    padding: 2% 4%;
+    padding-bottom: 6%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+
+}
+.orange .opinion .info-orange{
+    width: 100%;
+    height: 40%;
+    padding-left:4% ;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: rgba(0, 0, 0, 0.645);
+}
+.orange .opinion .info-orange img{
+    width: 75px;
+    height: 75px;
+    border-radius:100% ;
+    margin-right:4% ;
+}
+.orange .opinion p{
+    padding: 3% 10%;
+    font-size: 0.9vw;
+    opacity: 0.8;
+    line-height: 1.2vw;
+    margin-bottom: 3%;
+}
+
+/* form side */
+form {
+    width: 70%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+}
+
+form .add-photo{
+    margin-top: 0.5%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form .add-photo p{
+    font-size: var(--p-font);
+}
+form .add-photo .profile-pic-div{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid var(--hard-color);
+    position: relative;
+    margin-bottom: 1%;
+}
+@media screen and (max-width: 1400px) {
+    form .add-photo .profile-pic-div{
+        height: 100px;
+        width: 100px;
+    }
+    .orange .opinion .info img{
+        width: 40px;
+        height: 40px;
+
+    }
+}
+
+#photo{
+    height: 100%;
+    width: 100%;
+}
+
+#file{
+    display: none;
+}
+
+#uploadBtn{
+    height: 30%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--hard-color);
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+}
+form .inputs{
+    width: 100%;
+    height: 60%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding-top: 2%;
+    padding-left: 12%;
+}
+
+form .inputs .input-name, .input-phone{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 3%;
+}
+form .inputs .input-location{
+    display: flex;
+    width: 100%;
+    height: 20%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 3%;
+
+}
+form .inputs .input-location .input-country, .input-address{
+    flex: 1;
+    height:100%;
+}
+.input-address {
+    margin-left: -10%;
+}
+ .inputs input{
+   
+    font-size: var(--p-font);
+    border-radius: 4px;
+    border: 1px solid var(--soft-color);
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+    transition: all 0.4s ease;
+
+}
+
+.input-name input, .input-phone input{
+    width: 38.5%;
+    padding: 1% 1%;
+}
+.input-name p, .input-phone p{
+    margin-bottom: 0.25%;
+}
+.input-country input, .input-address input{
+    width: 70%;
+    padding: 2% 2%;
+}
+.input-description p{
+    margin-bottom: 0.6%;
+}
+.input-country p, .input-address p{
+   margin-bottom: 0.8%;
+} 
+form .inputs input::placeholder{
+    font-size: 0.9vw;
+}
+form .inputs input:focus{
+    background-color: var(--soft-color);
+}
+form .inputs .input-description{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+.input-description input{
+    width: 45%;
+    padding: 1.2% 1.2%;
+}
+form .submit{
+    margin-top: 3%;
+    width: 80%;
+    height: 10%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+}
+form .submit input{
+    font-size: 1.1vw;
+    font-weight: 600;
+    padding: 1% 2.5%;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--soft-color);
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+    transition: all 0.4s ease;
+}
+form .submit input:hover{
+    background-color: #ff9e61b3;
+    transform: scale(1.1);
+}

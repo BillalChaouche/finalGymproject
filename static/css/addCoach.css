@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+:root{
+    --hard-color:#FF9D61;
+    --soft-color:#FFF0E7;
+    --too-soft-color:#FFF7F1;
+    --white-color:#FFFFFF;
+    --grey-color:#F7F8F8;
+    --black-color:#000000;
+    --h1-font:3.2vw;
+    --h2-font:1.5vw;
+    --p-font:1.0vw;
+
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--grey-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+/* form side */
+
+.form-add {
+    position: relative;
+    position:absolute;
+    background-color: var(--white-color);
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.356);
+    border-radius: 12px;
+    padding: 0.7% 1%;
+    width: 0;
+    height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;
+    z-index: 103;
+    top: -100%;
+    
+}
+.form-edit{
+    background-color: var(--white-color);
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.356);
+    border-radius: 12px;
+    padding: 1% 1%;
+    padding-top: 2%;
+    width: 80%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1%;
+    background-color: #FF9D61;
+    
+}
+.form-edit .stats{
+    width: 80%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 2%;
+}
+.form-edit .stats div {
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.153);
+    width: 17%;
+    height: 100%;
+    background-color: var(--soft-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: top;
+    padding: 1%;
+    justify-content: left;
+}
+.form-edit .stats div h2{
+    font-size: var(--p-font);
+    margin-bottom: 4%;
+    color: rgb(76, 76, 76);
+
+}
+.form-edit .stats div p{
+    font-size: 1.5vw;
+}
+.form-edit .stats div div{
+    box-shadow: none;
+    width: 100%;
+    height: 70%;
+    background-color: var(--soft-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+} 
+.form-edit .stats div div button{
+    background-color: transparent;
+    border: none;
+    font-size: var(--p-font);
+    transition: all 0.4s ease;
+}
+.form-edit .stats div div button:hover{
+    transform: scale(1.1);
+    color: var(--hard-color);
+}
+#exit-edit{
+    position: absolute;
+    right: 1%;
+    top: 2%;
+    font-size: var(--h2-font);
+    transition: all 0.4s ease;
+    color: #0000007e;
+    z-index: 101;
+    background-color: transparent;
+    border: none;
+}
+#exit{
+    position: absolute;
+    left: 49%;
+    top: -10%;
+    font-size: var(--h2-font);
+    transition: all 0.4s ease;
+    color: #0000007e;
+    z-index: 101;
+    background-color: transparent;
+    border: none;
+}
+#exit:hover, #exit-edit:hover{
+    transform: scale(1.1);
+    color: rgb(255, 112, 112);
+}
+form .title{
+    width: 90%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+    margin: 1.4%;
+}
+
+form .inputs{
+    width: 90%;
+    height: 80%;
+    background-color:var(--soft-color);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 2% 0;
+    padding-left: 12%;
+    border-radius: 12px;
+}
+
+form .inputs .input-name, .input-address, .input-price{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 0.8%;
+}
+form .inputs .input-contact{
+    display: flex;
+    width: 100%;
+    height: 20%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1%;
+
+}
+form .inputs .input-contact .input-email, .input-phone{
+    flex: 1;
+    height:100%;
+}
+.input-phone {
+    margin-left: -10%;
+}
+ .inputs input{
+   
+    font-size: var(--p-font);
+    border-radius: 4px;
+    border: 1px solid var(--soft-color);
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+    transition: all 0.4s ease;
+
+}
+
+.input-name input, .input-address input, .input-price input{
+    width: 38.5%;
+    padding: 1% 1%;
+}
+.input-name p, .input-address p, .input-price p{
+    margin-bottom: 0.25%;
+}
+.input-email input, .input-phone input{
+    width: 70%;
+    padding: 2% 2%;
+}
+
+.input-email p, .input-phone p{
+   margin-bottom: 0.8%;
+} 
+form .inputs input::placeholder{
+    font-size: 0.9vw;
+}
+form .inputs input:focus{
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.251);
+    
+}
+
+
+form .submit{
+    margin-top: 3%;
+    width: 90%;
+    height: 10%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-bottom: 2%;
+
+}
+form .submit input, .submit button{
+    font-size: 1.1vw;
+    font-weight: 600;
+    padding: 1% 2.5%;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--soft-color);
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+    transition: all 0.4s ease;
+}
+#remove{
+    background-color: rgb(245, 104, 104);
+    color: var(--white-color);
+    margin-right: 2%;
+    padding: 1% 2%;
+    opacity: 0.8;
+}
+#remove:hover{
+     opacity: 1;
+     transform: scale(1.1);
+}
+form .submit input:hover{
+    background-color: #ff9e61b3;
+    transform: scale(1.1);
+}
+form .inputs .input-status{
+    width: 30%;
+    margin-bottom: 2.5%;
+    
+}
+.input-status p{
+    margin-bottom: 2%;
+}
+.input-status .option{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.input-status .option .option1 {
+    margin-right: 10%;
+}
+.input-status label{
+    font-size: 0.9vw;
+    transition: all 0.4s ease;
+}
+
+input[type="radio"]:checked + label:before {
+    background-color: var(--white-color);
+    border-color: var(--hard-color);
+  }
+  
+  /* Style the label text when the radio button is checked */
+  input[type="radio"]:checked + label {
+    font-weight:600 ;
+  }
+  .remove{
+    width: 0%;
+    height: 0%;
+    transition: all 0.4s ease;
+    top:-100%;
+}
+.show{
+    width: 60%;
+    height: 70%;
+    transition: all 0.4s ease;
+    top:15%;
+    transform: scale(1.1);
+    z-index: 100;
+}

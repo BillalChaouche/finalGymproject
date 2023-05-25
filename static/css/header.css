@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+:root{
+    --hard-color:#FF9D61;
+    --soft-color:#FFF0E7;
+    --too-soft-color:#FFF7F1;
+    --white-color:#FFFFFF;
+    --grey-color:#F7F8F8;
+    --black-color:#000000;
+    --h1-font:3.2vw;
+    --h2-font:1.5vw;
+    --p-font:1.0vw;
+
+}
+
+
+.above{
+    padding: 1.2% 1.2%;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+}
+.above .search{
+    width: 12%;
+    background-color: var(--too-soft-color);
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    margin-right: 1%;
+    padding-left: 0.3%;
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.144);
+    transition: all 0.4s ease;
+}
+.above .search #search-icon{
+    border: none;
+    width: 10%;
+    height: 100%;
+    background-color: transparent;
+    color:rgba(128, 128, 128, 0.918);
+    font-size: 0.8vw;
+    
+}
+.above .search input{
+    width: 90%;
+    height: 100%;
+    padding: 5% 7%;
+    border: none;
+    background-color: transparent;
+    font-size: var(--p-font);
+    
+    
+
+}
+.above .search:hover{
+    background-color: var(--soft-color);
+}
+.above #notification , #settings{
+    font-size: 1vw;
+    padding: 0.3% 0.4%;
+    border: none;
+    background-color: var(--too-soft-color);
+    margin-right:  0.7%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000ad;
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+    transition: all 0.4s ease;
+
+}
+.above #notification:hover, #settings:hover{
+    background-color: var(--soft-color);
+}

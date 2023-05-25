@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+:root{
+    --hard-color:#FF9D61;
+    --soft-color:#FFF0E7;
+    --too-soft-color:#FFF7F1;
+    --white-color:#FFFFFF;
+    --grey-color:#F7F8F8;
+    --black-color:#000000;
+    --h1-font:3.2vw;
+    --h2-font:1.5vw;
+    --p-font:1.0vw;
+
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: baseline;
+    position: relative;
+}
+.danger, .info{
+    position: absolute;
+    top: -20%;
+    left: 32.5%;
+    width: 30%;
+    height: 8%;
+    font-size: 1.2vw;
+    
+    backdrop-filter: blur(12px);
+    z-index: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1% 2%;
+    color: var(--white-color);
+    border-radius: 8px;
+   
+    animation-name: slide-down;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+
+    
+}
+.danger{
+    background-color: rgba(255, 120, 120, 0.622);
+    border: 2px solid rgb(255, 106, 106);
+}
+.info{
+    background-color: rgba(94, 175, 255, 0.622);
+    border: 2px solid rgb(22, 134, 254);
+}
+/* define animation */
+@keyframes slide-down {
+    0% {
+      top: -20%; /* start position */
+      opacity: 0;
+    }
+    10% {
+      top: 1%; /* end position */
+      opacity: 1;
+    }
+    90% {
+        top: 1%; /* end position */
+        opacity: 1;
+      }
+    100%{
+        top: -20%;
+        opacity: 0;
+    }
+  }
+/* photo */
+
+.photo-dashboard{
+    flex: 1;
+    background:linear-gradient(90deg,var(--too-soft-color),var(--soft-color));
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: right;
+    padding: 6% 5%;
+
+}
+.photo-dashboard img{
+
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    bottom: -10%;
+    right: -20%;
+    border-radius: 1px solid var(--hard-color);
+    border-radius: 12px;
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+    transition: all 0.4s ease;
+    opacity: 0.8;
+}
+.photo-dashboard img:hover{
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.211);
+}
+.photo-dashboard h2{
+    font-size:1.4vw;
+    color: rgb(88, 88, 88);
+    line-height: 2vw;
+
+}
+/* form input */
+
+form {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form h1{
+    font-size: var(--h1-font);
+    margin-bottom:5%;
+}
+form .inputs{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form .inputs .input-email, .input-password {
+    width: 50%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 2%;
+}
+.inputs input{
+   
+    font-size: var(--p-font);
+    border-radius: 4px;
+    border: 1px solid var(--soft-color);
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+    transition: all 0.4s ease;
+
+}
+
+.input-email input, .input-password input {
+    width: 100%;
+    padding: 2.5% 2%;
+}
+.input-email p, .input-password p{
+    margin-bottom: 0.5%;
+}
+form .inputs input::placeholder{
+    font-size: 0.9vw;
+}
+form .inputs input:focus{
+    background-color: var(--soft-color);
+}
+#forget{
+    margin-top: 0.2%;
+    color: rgb(95, 189, 248);
+    font-size: 0.9vw;
+    margin-bottom: 0.2%;
+
+}
+.input-submit, .login-google {
+    margin-top: 3%;
+    width: 50%;
+    padding: 1.4% 2%;
+    background-color: var(--soft-color);
+    font-weight: 600;
+    transition: all 0.5s ease;
+}
+input[type="submit"] {
+    font-size: var(--p-font);
+  }
+  .login-google{
+    padding-top: 1.7%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    text-decoration: none;
+    font-size: var(--p-font);
+    margin-top: 3%;
+    border-radius: 4px;
+  }
+  .login-google i{
+    margin-right:2%;
+  }
+  .input-submit:hover, .login-google:hover{
+    background-color: #FF9D61;
+  }
+  .signup{
+    width: 100%;
+    text-align: center;
+    font-size: var(--p-font);
+  }
+  .signup a{
+    color: var(--hard-color);
+    margin-left: 0.4%;
+    font-weight: 600;
+  }

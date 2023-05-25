@@ -1,0 +1,58 @@
+.danger, .info, .success{
+    position: absolute;
+    top: -20%;
+    left: 32.5%;
+    width: 30%;
+    height: 8%;
+    font-size: 1.2vw;
+    
+    backdrop-filter: blur(12px);
+    z-index: 600;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1% 2%;
+    color: var(--white-color);
+    border-radius: 8px;
+   
+    animation-name: slide-down;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+
+    
+}
+.danger{
+    background-color: rgba(255, 120, 120, 0.622);
+    border: 2px solid rgb(255, 106, 106);
+}
+.success{
+    background-color: rgba(120, 255, 199, 0.637);
+    border: 2px solid rgb(49, 255, 176);
+}
+
+.info{
+    background-color: rgba(120, 208, 255, 0.637);
+    border: 2px solid rgb(49, 186, 255); 
+}
+/* define animation */
+@keyframes slide-down {
+    0% {
+      top: -20%; /* start position */
+      opacity: 0;
+    }
+    10% {
+      top: 1%; /* end position */
+      opacity: 1;
+    }
+    90% {
+        top: 1%; /* end position */
+        opacity: 1;
+      }
+    100%{
+        top: -20%;
+        opacity: 0;
+    }
+  }

@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+:root{
+    --hard-color:#FF9D61;
+    --soft-color:#FFF0E7;
+    --too-soft-color:#FFF7F1;
+    --white-color:#FFFFFF;
+    --grey-color:#F7F8F8;
+    --black-color:#000000;
+    --h1-font:3.2vw;
+    --h2-font:1.5vw;
+    --p-font:1.0vw;
+
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-color: var(--grey-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2%;
+}
+body::-webkit-scrollbar {
+    width: 8px; /* width of the scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #f1f1f1; /* color of the track */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #8888889d; /* color of the scrollbar handle */
+    border-radius: 10px; /* radius of the scrollbar handle */
+  }
+  
+  body::-webkit-scrollbar-thumb:hover {
+    background: var(--hard-color); /* color of the scrollbar handle when hovered */
+  }
+/* to higlight the current navbar element*/
+side ul li .home-link{
+    transform: scale(1.1);
+    background-color: var(--hard-color);
+    color: var(--white-color);
+    transition: all 0.4s ease;
+}
+
+/* main */
+
+.main-info{
+    width: 92%;
+    height: 400px;
+    margin-left: 7%;
+    display: flex;
+    align-items: top;
+    justify-content:space-around;
+    margin-bottom: 2%;
+}
+
+/* profile*/
+.main-info .profile{
+    width: 25%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+    border: 1px solid bar(--soft-color);
+}
+.main-info .profile .header{
+    width: 100%;
+    height: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8% 5%;
+
+}
+.header h2{
+    font-size:var(--h2-font);
+}
+ .header a{
+    font-size:var(--p-font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+.header a:hover{
+    font-size: 1.2vw;
+    color: var(--hard-color);
+}
+.main-info .profile .body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+}
+.main-info .profile .body img{
+    max-width: 100%;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin-bottom: 7%;
+}
+.main-info .profile .body p{
+    font-size: var(--p-font);
+    font-weight: 600;
+    margin-bottom: 7%;
+    text-align: center;
+}
+.main-info .profile .body .gym-stat{
+    width: 90%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 2px solid var(--soft-color);
+    border-top: 2px solid var(--soft-color);
+}
+.main-info .profile .body .gym-stat div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-info .profile .body .gym-stat div h2{
+    font-size:1.4vw;
+
+}
+
+
+.main-info .profile .body .gym-stat div p{
+    font-size:var(--p-font);
+    font-weight: 300;
+    color: grey;
+
+}
+
+/* statistics */
+
+ /* statistics */
+
+ .main-info .statistics {
+    width: 70%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+    border: 1px solid bar(--soft-color);
+    
+
+}
+.main-info .statistics .header{
+    width: 100%;
+    height: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3% 1.5%;
+  
+}
+.main-info .statistics .header .statheader{
+    width: 12%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/*statistics_main*/
+.statistics_main {
+    height: 88%;
+    width: 100%;
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+
+  }
+  
+  .statistics_main > div {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #ccc;
+    padding: 30px;
+   
+  }
+  
+  .statistics_main > div:last-child {
+    border-right: none;
+   
+  }
+  
+  .statistics_main h3 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .statistics_main p {
+    font-size: 50px;
+    margin: 0;
+   
+  }
+  .statistics_main .members p {
+      
+      padding-top: 30px;
+    
+  }
+  .statistics_main .coaches p {
+      
+      padding-top: 30px;
+  }
+
+  .statistics_main .funds p {
+    padding-top: 30px;
+}
+
+.statistics_main .offers p {
+    padding-top: 30px;
+}
+
+  #days {
+    font-size: 1vw;
+    color: #434343;
+    font-weight: 400;
+    padding: 3% 6%;
+    border-radius: 8px;
+    border: none;
+    background-color:var(--soft-color);
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+    transition: all 0.4s ease;
+  }
+
+/*statistics_main end*/
+/* tasks*/
+.tasks{
+    width: 85%;
+    flex: 1;
+    height: auto;
+    max-height: 65vh;
+    background-color:var(--white-color);
+    border-radius: 22px;
+    margin-left: 7%;
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+    border: 1px solid bar(--soft-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2%;
+    padding-right: 8px;
+    overflow: scroll;
+}
+.tasks::-webkit-scrollbar {
+    width: 8px; /* width of the scrollbar */
+    height: 30px;
+    margin-left: -8px;
+  }
+  
+  .tasks::-webkit-scrollbar-track {
+    background:transparent; /* color of the track */
+  }
+  
+  .tasks::-webkit-scrollbar-thumb {
+    background: #8888889d; /* color of the scrollbar handle */
+    border-radius: 10px; /* radius of the scrollbar handle */
+  }
+  
+  .tasks::-webkit-scrollbar-thumb:hover {
+    background: var(--hard-color); /* color of the scrollbar handle when hovered */
+  }
+
+.tasks .header{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2% 1.5%;
+    
+}
+.tasks .enter-task{
+    width: 30%;
+    background-color:var(--soft-color);
+    height: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    margin-bottom: 2%;
+}
+.tasks .enter-task:hover{
+    box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.091);
+}
+.tasks .enter-task input{
+    width: 90%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: var(--p-font);
+    background-color: transparent;
+    padding: 2% 3%;
+}
+.tasks .enter-task button{
+
+    background-color: transparent;
+    border: none;
+    font-size: var(--p-font);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2% 3%;
+    transition: all 0.4s ease;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.tasks .enter-task button:hover{
+    background-color: var(--hard-color);
+
+}
+.tasks .show-tasks{
+    width: 100%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 2%;
+    row-gap: 10%;
+    padding: 1% 1%;
+}
+.tasks .show-tasks .task{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--soft-color);
+    border-radius: 10px;
+}
+.tasks .show-tasks .task .header{
+    width: 100%;
+    height: 23%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2% 2%;
+    border-bottom: 1px solid var(--white-color);
+
+}.tasks .show-tasks .task .header .time{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-around;
+    width: auto;
+    height: 100%;
+
+}
+.tasks .show-tasks .task .header .time #date{
+    font-size: 0.7vw;
+    color: #2e2e2e;
+
+}
+.tasks .show-tasks .task .header .time #time{
+    font-size: var(--p-font);
+    color: #2e2e2e;
+}
+
+
+.tasks .show-tasks .task .header .buttons{
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    align-items: top;
+    justify-content: right;
+    padding-right: 2%;
+    padding-top: 1%;
+    width: 30%;
+}
+.tasks .show-tasks .task .header .buttons button{
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 100%;
+    opacity: 0.7;
+    transition: all 0.4s ease;
+}
+.tasks .show-tasks .task .header .buttons #delete{
+    background-color: rgb(255, 105, 135);
+}
+.tasks .show-tasks .task .header .buttons #done{
+    background-color: rgb(90, 246, 210);
+}
+.tasks .show-tasks .task .header .buttons #freez{
+    background-color: rgb(72, 72, 72);
+}
+.tasks .show-tasks .task .header .buttons button:hover{
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+
+    
+}
+.tasks .show-tasks .task .content{
+    border-top: 1px solid var(--white-color);
+    overflow: hidden;
+    flex: 1;
+    width: 100%;
+    padding: 3% 3%;
+    display: flex;
+    justify-content: left;
+    font-size: var(--p-font);
+}
+
+
+
+
+
