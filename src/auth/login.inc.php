@@ -1,9 +1,5 @@
 <?php
-session_start();
-//// connect with the database
-include dirname(__DIR__).'/lib/connect.php';
-// import the config file
-include dirname(__DIR__).'/lib/config.php';
+
 $msg = "";
 
 if (isset($_POST['login'])) {
