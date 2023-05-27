@@ -1,4 +1,4 @@
-const BaseUrl = 'http://localhost/GymFlex(v3)';
+const BaseUrl = 'http://gymflex.online';
 
 
 

@@ -59,7 +59,7 @@ let numSession = document.getElementById('number-of-session').textContent;
 var div = document.createElement("div");
 
 // base Url 
-const BaseUrl = 'http://localhost/GymFlex(v3)';
+const BaseUrl = 'http://gymflex.online';
 
 function increment(id){
    

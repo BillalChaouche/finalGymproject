@@ -52,7 +52,7 @@ done.addEventListener('click',function(){
 
 // get the common URL
 
-const BaseUrl = 'http://localhost/GymFlex(v3)';
+const BaseUrl = 'http://gymflex.online';
 
   // handle form submission
   
