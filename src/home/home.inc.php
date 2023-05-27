@@ -45,6 +45,35 @@ if (isset($_SESSION['reset_password_success'])) {
             mysqli_stmt_bind_result($stmt2,$num_coaches);
             mysqli_stmt_fetch($stmt2);
             mysqli_stmt_close($stmt2);
+            // number of members
+            $sql2 = "SELECT COUNT(identity_mem)
+            FROM members
+            WHERE id_owner = ?";
+            $stmt2 = mysqli_prepare($conn, $sql2);
+            mysqli_stmt_bind_param($stmt2, "s", $id_owner);
+           $_SESSION['SESSION_ID'] = $id_owner;
+            
+            mysqli_stmt_execute($stmt2);
+            mysqli_stmt_store_result($stmt2);
+           // get the number of coaches
+           mysqli_stmt_bind_result($stmt2,$num_members);
+           mysqli_stmt_fetch($stmt2);
+           mysqli_stmt_close($stmt2);
+           // number of offers
+           $sql2 = "SELECT COUNT(id_off)
+            FROM offers
+            WHERE id_owner = ?";
+            $stmt2 = mysqli_prepare($conn, $sql2);
+            mysqli_stmt_bind_param($stmt2, "s", $id_owner);
+           $_SESSION['SESSION_ID'] = $id_owner;
+            
+            mysqli_stmt_execute($stmt2);
+            mysqli_stmt_store_result($stmt2);
+           // get the number of coaches
+           mysqli_stmt_bind_result($stmt2,$num_offers);
+           mysqli_stmt_fetch($stmt2);
+           mysqli_stmt_close($stmt2);
+
             // check if the user setup profile
             /* we will check only if the name is empty because the setup profie process
             ensure that all input must be filled to be submited*/

@@ -4,6 +4,6 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: ".BASE_URL."");
+header("Location: ".BASE_URL."/login");
 exit;
 ?>

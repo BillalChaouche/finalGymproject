@@ -26,12 +26,13 @@ function removeBlur() {
 }
 
 // add form
-add.addEventListener('click', function () {
+function showform(){
 
   doBlur();
   formAdd.classList.remove('remove');
   formAdd.classList.add('show');
-})
+}
+
 exit.addEventListener('click', function () {
   formAdd.classList.remove('show');
   formAdd.classList.add('remove');
@@ -42,6 +43,7 @@ done.addEventListener('click', function () {
   formAdd.classList.add('remove');
   removeBlur();
 })
+
 
 
 
@@ -80,17 +82,7 @@ $('.form-add').on('submit', function (event) {
       if (response) {
         div.innerHTML = "<div class='success'>the product is added</div>";
         document.body.appendChild(div);
-        $('.products').append(
-          "<div id='product'>" +
-          "<button class='more' onclick=\"location.href='/productEdit?id_prod="+ priceAdd+ "&prodname=" +nameAdd+ "'\"><i class='bi bi-arrow-right'></i></button>" +
-          "<img src='http://localhost/GymFlex/static/images/logo.png' alt='' id='product_img'>" +
-          "<h3>" +
-          nameAdd + "</h3>" +
-
-
-          "<h1> Qt. : 0 </h1>" +
-          "</div>"
-        );
+        fetchProducts();
       } else {
         div.innerHTML = "<div class='danger'>Something went wrong</div>";
         document.body.appendChild(div);
@@ -104,6 +96,25 @@ $('.form-add').on('submit', function (event) {
 });
 
 
+function fetchProducts() {
+  $.ajax({
+    url:BaseUrl+'/products',
+    method: 'POST',
+    success: function(response) {
+      // update task list
+      let responseDoc = new DOMParser().parseFromString(response, "text/html");
+      let products = responseDoc.getElementById('products');
+      document.getElementById('products').innerHTML = products.innerHTML;
+     
+      
+    },
+    error: function(xhr, status, error) {
+      // handle error
+      div.innerHTML = "<div class='danger'>Something went wrong</div>";
+      document.body.appendChild(div);
+    }
+  });
+}
 
 
 /*

@@ -26,7 +26,7 @@
     <!-- this is the form for adding a product -->
 
     <form class="form-add">
-        <button id="exit"><i class="bi bi-x-circle"></i></button>
+        <button id="exit" type="button"><i class="bi bi-x-circle"></i></button>
         <div class="title">
             <h1>Add a product</h1>
         </div>
@@ -62,14 +62,17 @@
     </section>
 
 
-    <section class="products">
+    <section class="products" id="products">
     <div class="header">
-            <button id="add"><i class="bi bi-plus"></i></button>
+            <button id="add" onclick="showform()"><i class="bi bi-plus"></i></button>
 
             <h1>Add a product</h1>
-        </div>
-
-        <?php  displayProducts($conn); ?>
+    </div>
+        <?php echo $displayProducts ;
+        $displayProducts = "";
+        ?>
+       
+        
 
     </section>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -21,6 +21,7 @@ if (isset($_POST['name']) && isset($_POST['price'])) {
         if ($stmt->affected_rows > 0) {
             // SQL statement executed successfully
             echo "Product added successfully";
+            
         } else {
             // Error occurred while executing the SQL statement
             echo "Error: Unable to add product";
@@ -32,5 +33,6 @@ if (isset($_POST['name']) && isset($_POST['price'])) {
 
     // close the statement
     $stmt->close();
+    
 }
 ?>

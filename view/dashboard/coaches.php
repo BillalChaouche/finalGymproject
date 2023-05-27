@@ -28,20 +28,20 @@
                 <p>Name: 
                     <div class="req"></div>
                 </p>
-                <input type="text" placeholder="enter your gym name" required id="add-name" >
+                <input type="text" placeholder="enter your coach name" required id="add-name" maxlength="20">
             </div>
             <div class="input-contact">
                 <div class="input-email">
                     <p>Email: 
                         <div class="req"></div>
                     </p>
-                    <input type="email" placeholder="enter email" required id="add-email" >
+                    <input type="email" placeholder="enter email" required id="add-email" maxlength="30">
                 </div>
                 <div class="input-phone">
                     <p>Phone number: 
                         <div class="req"></div>
                     </p>
-                    <input type="number" placeholder="enter phone number" required id="add-number" >
+                    <input type="number" placeholder="enter phone number" required id="add-number" oninput="limitInputLength(this, 10)">
                 </div>
                 
             </div>
@@ -49,7 +49,7 @@
                 <p>address: 
                     <div class="req"></div>
                 </p>
-                <input type="text" placeholder="enter your address" required id="add-address" >
+                <input type="text" placeholder="enter your address" required id="add-address" maxlength="50">
             </div>
             
             <div class="input-status">
@@ -69,9 +69,9 @@
             </div>
                 </div>
             <div class="input-price">
-                <p>Session price: 
+                <p>Day price: 
                 </p>
-                <input type="number" placeholder="enter the price" id="add-price" >
+                <input type="number" placeholder="enter the price" id="add-price" oninput="limitInputLength(this, 10)">
             </div>
         </div>
         <div class="submit">
@@ -114,7 +114,10 @@
             </tbody>
         </table>
     </section>
+    <script src="<?php echo BASE_URL?>/js/input.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script src="<?php echo BASE_URL?>/js/coaches.js"></script>
 </body>
 </html>

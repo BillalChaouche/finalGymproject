@@ -32,10 +32,9 @@
                 <input type="password" placeholder="confirm your password" required name="confirm-password">
             </div>
             <input  type="submit" class="input-submit" value="Sign up" name="signup">
-            <a class="login-google"><i class="bi bi-google"></i> Continue with google</a>
             
         </div>
-        <p class="signup">Have an account?<a href="<?php echo BASE_URL?>">Login</a></p>
+        <p class="signup">Have an account?<a href="<?php echo BASE_URL?>/login">Login</a></p>
         
     </form>
     <div class="photo-dashboard">

@@ -29,7 +29,7 @@
 
             </div>
         <div class="inputs">
-        <input type="hidden" id="idProd"  value=<?php echo $_GET['id_prod']; ?>>
+        <input type="hidden" id="idProd"  value=<?php echo $_GET['id_prod']; ?> required>
 
             <div class="input-name">
                 <p>Name:
@@ -108,16 +108,16 @@
 
 
       <label for="supplier">Supplier:</label>
-      <input type="text" id="supplier" name="supplier"><br>
+      <input type="text" id="supplier" name="supplier" required><br>
 
       <label for="price">Price:</label>
-      <input type="text" id="price" name="price"><br>
+      <input type="text" id="price" name="price" required><br>
 
       <label for="expire-date">Expire date:</label>
-      <input type="date" id="expire-date" name="expire_date"><br>
+      <input type="date" id="expire-date" name="expire_date" required><br>
 
       <label for="quantity">Quantity:</label>
-      <input type="number" id="quantity" name="quantity"><br><br>
+      <input type="number" id="quantity" name="quantity" required><br><br>
       <div>      
         <button type="button" id="cancelEDIT-form-submit">Cancel</button>
         <button type="submit" id="edit-form-submit" style="  background-color: #FF9D61;">Save</button>
@@ -138,13 +138,13 @@
 
 
       <label for="supplier">Supplier:</label>
-      <input type="text" id="supplier" name="supplier"><br>
+      <input type="text" id="supplier" name="supplier" required><br>
 
       <label for="price">Price:</label>
-      <input type="text" id="price" name="price" value='<?php echo getProductPrice($_GET['id_prod'], $conn); ?>'><br>
+      <input type="text" id="price" name="price" value='<?php echo getProductPrice($_GET['id_prod'], $conn); ?>' required><br>
 
       <label for="expire-date">Expire date:</label>
-      <input type="date" id="expire-date" name="expire_date"><br>
+      <input type="date" id="expire-date" name="expire_date" required><br>
 
       <label for="quantity">Quantity:</label>
       <input type="number" id="quantity" name="quantity"><br><br>

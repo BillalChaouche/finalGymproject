@@ -82,14 +82,16 @@ function hideAddForm(form){
 // this code when the user click on the offer title it shows him all availabe offers
 
 isShown = false;   //initiale is hidden
-const offerTitle = document.getElementById('offer-title');
-offerTitle.addEventListener('click', function() {
+const showOffers = document.getElementById('show-offer');
+showOffers.addEventListener('click', function() {
   if(!isShown){
+  showOffers.style.transform = 'rotateX(180deg)';
   offers.classList.remove('shrink');
   offers.classList.add('tall');
   isShown = true;
   }
   else{
+    showOffers.style.transform = 'rotateX(0deg)';
     offers.classList.remove('tall');
     offers.classList.add('shrink');
     isShown = false;
@@ -251,6 +253,12 @@ $('.form-add-offer').on('submit', function(event) {
               $('#add-email-member').val("");
 
 
+            }
+            else if(response == 'error: email is not valid'){
+              div.innerHTML = "<div class='danger'>email is not valid</div>";
+              document.body.appendChild(div);
+              // clear email input
+              $('#add-email-member').val("");
             }
             else {
               div.innerHTML = "<div class='danger'>Something went wrong</div>";

@@ -19,6 +19,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Get the input values from (passed by ajax)
         $name = $_POST['name'];
         $email = $_POST['email'];
+        // check email validity
+        if(!checkEmailExistence($email)){
+            echo "error: email is not valid";
+            exit(); // terminate the script
+        }
         $offer = $_POST['offer'];
         $offerId = $_POST['offerId'];
         $session = $_POST['session'];

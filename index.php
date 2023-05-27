@@ -58,6 +58,26 @@ if (!isset($_SESSION['SESSION_log'])) {
         include "view/dashboard/profileSetup.php";
         exit();
      }
+     else if(strpos($_SERVER['PHP_SELF'], '/coachesPannel') !== false){
+      include 'view/website/Pannelcoaches.php';
+      exit();
+     }
+     else if(strpos($_SERVER['PHP_SELF'], '/productsPannel') !== false){
+      include 'view/website/Pannelproducts.php';
+      exit();
+     }
+     else if(strpos($_SERVER['PHP_SELF'], '/membersPannel') !== false){
+      include 'view/website/Pannelmembers.php';
+      exit();
+     }
+     else if(strpos($_SERVER['PHP_SELF'], '/resetPannel') !== false){
+      include 'view/website/Pannelreset.php';
+      exit();
+     }
+     else if(strpos($_SERVER['PHP_SELF'], '/more') !== false){
+      include 'view/website/more.php';
+      exit();
+     }
      else{
         //include 'src/auth/login.inc.php';
         include 'view/website/main.php';
@@ -134,6 +154,7 @@ else {
         exit();
      }
      else if(strpos($_SERVER['PHP_SELF'], '/editProfile') !== false){
+        include 'src/profile/profileEdit.inc.php';
         include 'view/dashboard/editProfile.php';
         exit();
      }

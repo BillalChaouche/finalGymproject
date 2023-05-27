@@ -1,4 +1,6 @@
 <?php
+$id_owner = $_SESSION['SESSION_ID'];
+
 function getStatistics($conn,$value,$id_owner) {
   $statistics = array();
 
@@ -27,10 +29,14 @@ function getStatistics($conn,$value,$id_owner) {
   $statistics['total funds'] = $total_funds;
 
   // Get best offer
-  $best_offer_query = "SELECT name_off FROM offers WHERE id_off IN (SELECT id_off FROM member_to_offers) GROUP BY name_off ORDER BY COUNT(*) DESC LIMIT 1";
-  $best_offer_result = mysqli_query($conn, $best_offer_query);
+  $best_offer_query = "SELECT name_off FROM offers WHERE id_off IN (SELECT id_off FROM member_to_offers) AND id_owner = ? GROUP BY name_off ORDER BY COUNT(*) DESC LIMIT 1";
+  $stmt = mysqli_prepare($conn, $best_offer_query);
+  mysqli_stmt_bind_param($stmt, "s", $id_owner);
+  mysqli_stmt_execute($stmt);
+  $best_offer_result = mysqli_stmt_get_result($stmt);
   $best_offer_name = mysqli_fetch_array($best_offer_result)[0];
   $statistics['best offers'] = $best_offer_name;
+  
 
   return $statistics;
 }
@@ -40,17 +46,18 @@ function printStatistics($statistics) {
   foreach ($statistics as $key => $value) {
     echo '<div id="statistics1" class="' . $key . '">';
     echo '<h3>' .$key. '</h3>';
-    if($value > 0){
-    echo '<p style="color: rgb(140, 244, 140);">+' . $value . '</p>';
-    }
-    else if($key == 'best offers'){
+    if($key == 'best offers'){
       if($value){
-        echo '<p style="color: rgb(140, 244, 140);">' . $value . '</p>';
+        echo '<p style="color: black;">' . $value . '</p>';
       }
       else{
       echo '<p>-</p>';
       }
     }
+    else if($value > 0){
+    echo '<p style="color: rgb(140, 244, 140);">+' . $value . '</p>';
+    }
+    
     else{
       echo '<p style="color:balck;">0</p>';
     }

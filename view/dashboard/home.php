@@ -42,7 +42,7 @@
             <div class="profile">
                 <div class="header">
                     <h2>Profile</h2>
-                    <a href="<?php echo BASE_URL?>/editProfile"><i class="bi bi-pen"></i></a>
+                    <a href="<?php echo BASE_URL?>/editProfile?id=<?php echo $_SESSION['SESSION_ID'];?>"><i class="bi bi-pen" style="color:black"></i></a>
                 </div>
                 <div class="body">
                     <img src="<?php echo $logoSrc; ?>" alt="profile-image">
@@ -53,12 +53,12 @@
                             <p>coaches</p>
                         </div>
                         <div id="members-stat">
-                            <h2>257</h2>
+                            <h2><?php echo $num_members ?></h2>
                             <p>members</p>
                         </div>
                         <div id="session-stat">
-                            <h2>680</h2>
-                            <p>sessions</p>
+                            <h2><?php echo $num_offers ?></h2>
+                            <p>offers</p>
                         </div>
                     </div>
                 </div>

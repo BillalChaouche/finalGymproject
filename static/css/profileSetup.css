@@ -334,3 +334,112 @@ form .submit input:hover{
     background-color: #ff9e61b3;
     transform: scale(1.1);
 }
+
+/* this section for the editProfile*/
+
+#remove{
+    background-color: rgb(255, 105, 105);
+    color: white;
+    opacity: 0.8;
+    transition: all 0.4s ease;
+    font-size: 1vw;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    padding: 1% 2.5%;
+    margin-left: 2%;
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
+
+}
+#remove:hover{
+    opacity: 1;
+}
+
+.delete-owner{
+    
+    display: none;
+    
+
+}
+.choose-btn{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+
+}
+.choose-btn input, .choose-btn button{
+    border: none;
+    font-size: var(--p-font);
+    font-weight: 600;
+    padding: 3.5% 10%;
+    border-radius: 5px;
+    opacity: 0.8;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+#delete{
+    background-color: rgb(245, 104, 104);
+    color: var(--white-color);
+}
+.choose-btn input:hover, .choose-btn button:hover{
+    opacity: 1;
+}
+
+.remove-delete{
+    transition: all 0.5s ease;
+    display: none;
+}
+.show-delete{
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    background-color:var(--white-color);
+    padding: 0% 1%;
+    font-size: 1.1vw;
+    line-height: 1.7vw;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    top: 32%;
+    right: auto;
+    border: 2px solid var(--soft-color);
+    box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.163);
+
+
+   
+    
+}
+
+
+#exit-edit{
+    position: absolute;
+    right: 1%;
+    top: 2%;
+    font-size: var(--h2-font);
+    transition: all 0.4s ease;
+    color: #0000007e;
+    z-index: 101;
+    background-color: transparent;
+    border: none;
+}
+#exit{
+    position: absolute;
+    left: 49%;
+    top: -10%;
+    font-size: var(--h2-font);
+    transition: all 0.4s ease;
+    color: #0000007e;
+    z-index: 101;
+    background-color: transparent;
+    border: none;
+}
+#exit:hover, #exit-edit:hover{
+    transform: scale(1.1);
+    color: rgb(255, 112, 112);
+}

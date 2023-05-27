@@ -28,7 +28,6 @@
             </div>
             <a id="forget" href="<?php echo BASE_URL?>/Reset">Forget password?</a>
             <input  type="submit" class="input-submit" value="Login" name="login">
-            <a class="login-google"><i class="bi bi-google"></i> Continue with google</a>
             
         </div>
         <p class="signup">New?<a href="<?php echo BASE_URL?>/signup">Get started</a></p>

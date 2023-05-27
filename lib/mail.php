@@ -43,5 +43,14 @@ function sendEmail($content,$email){
                     }
     
                 }
+    
+                function checkEmailExistence($email) {
+                    // Extract the domain from the email
+                    $domain = substr(strrchr($email, "@"), 1);
+                
+                    // Check if the domain has MX records
+                    return checkdnsrr($domain, "MX");
+                }
+                
                 
 ?>

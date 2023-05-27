@@ -24,11 +24,11 @@
 
     <div class="stats">
         <div class="session-price">
-            <h2>Session price</h2>
+            <h2>Day price</h2>
             <p ><?php echo $price_session ?></p>
         </div>
         <div class="session-number">
-            <h2>Session number</h2>
+            <h2>Days number</h2>
             <div>
             <button id="session-add" onclick="event.preventDefault(); increment('<?php echo $id_coach ?>')"><i class="bi bi-caret-up"></i></button>
             <p id="number-of-session"><?php echo $num_session ?></p>
@@ -47,20 +47,20 @@
             <p>Name: 
                 <div class="req"></div>
             </p>
-            <input type="text" placeholder="enter the coach name" required value="<?php echo $name_coach?>" name="name">
+            <input type="text" placeholder="enter the coach name" required value="<?php echo $name_coach?>" name="name" maxlength="20">
         </div>
         <div class="input-contact">
             <div class="input-email">
                 <p>Email: 
                     <div class="req"></div>
                 </p>
-                <input type="email" placeholder="enter email" required value="<?php echo $email_coach?>"name="email">
+                <input type="email" placeholder="enter email" required value="<?php echo $email_coach?>"name="email" maxlength="30">
             </div>
             <div class="input-phone">
                 <p>Phone number: 
                     <div class="req"></div>
                 </p>
-                <input type="number" placeholder="enter phone number" required value="<?php echo $phone_coach?>" name="number">
+                <input type="number" placeholder="enter phone number" required value="<?php echo $phone_coach?>" name="number" oninput="limitInputLength(this, 10)">
             </div>
             
         </div>
@@ -68,7 +68,7 @@
             <p>address: 
                 <div class="req"></div>
             </p>
-            <input type="text" placeholder="enter your address" required value="<?php echo $address_coach?>" name="address" >
+            <input type="text" placeholder="enter your address" required value="<?php echo $address_coach?>" name="address" maxlength="50">
         </div>
         
         <div class="input-status">
@@ -88,9 +88,9 @@
         </div>
             </div>
         <div class="input-price">
-            <p>Session price: 
+            <p>Day price: 
             </p>
-            <input type="number" placeholder="enter the price" value="<?php echo $price_session?>" name="price">
+            <input type="number" placeholder="enter the price" value="<?php echo $price_session?>" name="price" oninput="limitInputLength(this, 10)">
         </div>
     </div>
     <div class="submit">
@@ -107,6 +107,8 @@
             
         </div>
     </form>
+    <script src="<?php echo BASE_URL?>/js/input.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="<?php echo BASE_URL ;?>/js/editCoach.js"></script>
 </body>

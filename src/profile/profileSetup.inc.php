@@ -71,6 +71,10 @@ if(isset($_FILES['gym_photo'])) {
     $file = $_FILES['gym_photo'];
     $content = file_get_contents($file['tmp_name']);
 }
+if ($content === false) {
+    $msg = "<div class='danger'>Invalid file format. Please upload a valid image.</div>";
+    exit();
+}
 // Insert the inputs into gym owner row in the database
 $sql = "UPDATE gym_owner SET name_gym=?, phone_owner=?, gym_country=?, address_gym=?, gym_desc=?, logo_gym= ? WHERE email_gym= ?";
 $stmt = mysqli_prepare($conn, $sql);

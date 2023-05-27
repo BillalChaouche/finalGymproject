@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+
+}
+:root{
+    --hard-color:#FF9D61;
+    --soft-color:#FFF0E7;
+    --too-soft-color:#FFF7F1;
+    --white-color:#FFFFFF;
+    --grey-color:#F7F8F8;
+    --black-color:#000000;
+    --h1-font:3.2vw;
+    --h2-font:1.5vw;
+    --p-font:1.0vw;
+
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-color:var(--white-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2%;
+    position: relative;
+}
+
+.inst{
+    background-color: var(--soft-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    padding: 2% 2%;
+
+}
+h1{
+    font-size: 2.3vw;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.inst .title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 2%;
+}
+.inst .title h2::before{
+    content: "•"; /* Use any symbol or text you want for the point */
+  margin-right: 5px; /* Adjust the spacing between the point and the title */
+}
+.inst img{
+    width: 50%;
+    height: 95%;
+    border-radius:12px;
+    box-shadow: 1px 1px 20px rgba(57, 57, 57, 0.172);
+    transition: all 0.4s ease;
+
+}
+
+#login{
+    margin-top: 2%;
+    font-size: 1.1vw;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 0.5% 1.5%;
+    background-color: #151515;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    text-decoration: none;
+}
+#login:hover{
+    background-color:#ff9e6173;
+    box-shadow: 1px 1px 10px rgba(57, 57, 57, 0.148);
+
+}
+
+.more{
+    margin-top: 2%;
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6%;
+}
+.more h1{
+    margin-bottom: 4%;
+}
+.more .buttons{
+    width: 40%;
+    height: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.more .buttons a{
+    width: 16%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    font-size: 1.1vw;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #FF9D61;
+    opacity: 0.8;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    text-align: center;
+}
+.more .buttons a:hover{
+    opacity: 1;
+    transform: translateY(2px);
+    box-shadow: 1px 1px 20px rgba(57, 57, 57, 0.137);
+}

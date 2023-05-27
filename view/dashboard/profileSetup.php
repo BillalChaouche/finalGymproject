@@ -14,7 +14,7 @@
 <body>
 <?php echo $msg ?>
     <div class="orange">
-        <h1>Brand</h1>
+        <h1>GymFlex</h1>
         <div class="text-center">
             <h2>Start your<br> journey with us</h2>
             <p>make it easier and more<br> productive on the same time by<br> one click</p>
@@ -32,7 +32,7 @@
         <div class="add-photo">
             <div class="profile-pic-div">
                 <img src="<?php echo BASE_URL ;?>/static/images/Untitled design (2).png" id="photo">
-                <input type="file" id="file" name="gym_photo">
+                <input type="file" id="file" name="gym_photo" required>
                 <label for="file" id="uploadBtn" style="display: none;">Choose Photo</label>
             </div>
             <p>Add a picture</p>
@@ -42,20 +42,20 @@
                 <p>Name: 
                     <div class="req"></div>
                 </p>
-                <input type="text" placeholder="enter your gym name" required name="name" value="<?php if (isset($_POST['done'])) { echo $gym_name; } ?>">
+                <input type="text" placeholder="enter your gym name" required name="name" maxlength="30" value="<?php if (isset($_POST['done'])) { echo $gym_name; } ?>">
             </div>
             <div class="input-location">
                 <div class="input-country">
                     <p>Country: 
                         <div class="req"></div>
                     </p>
-                    <input type="text" placeholder="enter country" required name="country" value="<?php if (isset($_POST['done'])) { echo $gym_country; } ?>">
+                    <input type="text" placeholder="enter country" required name="country" maxlength="30" value="<?php if (isset($_POST['done'])) { echo $gym_country; } ?>">
                 </div>
                 <div class="input-address">
                     <p>address: 
                         <div class="req"></div>
                     </p>
-                    <input type="text" placeholder="enter your address" required name="address" value="<?php if (isset($_POST['done'])) { echo $gym_address; } ?>">
+                    <input type="text" placeholder="enter your address" required name="address" maxlength="100" value="<?php if (isset($_POST['done'])) { echo $gym_address; } ?>">
                 </div>
                 
             </div>
@@ -63,12 +63,12 @@
                 <p>Phone number: 
                     <div class="req"></div>
                 </p>
-                <input type="number" placeholder="enter your phone number" required name="number" value="<?php if (isset($_POST['done'])) { echo $gym_pnum; } ?>">
+                <input type="number" placeholder="enter your phone number" required name="number" oninput="limitInputLength(this, 10)" value="<?php if (isset($_POST['done'])) { echo $gym_pnum; } ?>">
             </div>
             <div class="input-description">
                 <p>description: 
                 </p>
-                <input type="text" placeholder="enter description" name="description" value="<?php if (isset($_POST['done'])) { echo $gym_desc; } ?>">
+                <input type="text" placeholder="enter description" name="description" maxlength="200" value="<?php if (isset($_POST['done'])) { echo $gym_desc; } ?>">
             </div>
         </div>
         <div class="submit">
@@ -77,5 +77,6 @@
         
     </form>
     <script src="<?php echo BASE_URL?>/js/profileSetup.js"></script>
+    <script src="<?php echo BASE_URL?>/js/input.js"></script>
 </body>
 </html>

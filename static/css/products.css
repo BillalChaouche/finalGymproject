@@ -225,6 +225,7 @@ side ul li .products-link {
     border-radius: 12px;
     box-shadow: 1px 1px 20px rgba(128, 128, 128, 0.091);
     border: 1px solid bar(--soft-color);
+    margin-bottom: 2%;
 
 
 }

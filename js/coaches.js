@@ -86,6 +86,13 @@ const BaseUrl = 'http://localhost/GymFlex(v3)';
             div.innerHTML = "<div class='success'>the coach is added</div>";
             document.body.appendChild(div);
             fetchCoaches();
+            $('#add-name').val("") ;
+            $('#add-email').val("");
+            $('#add-number').val("");
+            $('#add-address').val("");
+            $('input[id="option"]').prop("checked", false);
+            $('#add-price').val("");
+
           } else {
             div.innerHTML = "<div class='danger'>Something went wrong</div>";
             document.body.appendChild(div);

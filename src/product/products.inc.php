@@ -26,7 +26,6 @@ function getProductQuantity($id_prod, $conn) {
 
 
 
-function displayProducts($conn) {
     // assuming you have a database connection already established
     $query = "SELECT * FROM product WHERE id_owner = ?";
     $stmt = $conn->prepare($query);
@@ -47,11 +46,11 @@ function displayProducts($conn) {
             // handle the case where the query was not successful
             echo "Error: " . $stmt->error;
         }
-
+        $displayProducts = "";
         // close the statement
         $stmt->close();
         foreach ($product as $row) {
-            echo "
+            $displayProducts .="
             <div id='product'>
                 <button class='more' onclick=\"location.href='\productEdit?id_prod=" . urlencode($row['id_prod']) . "&prodname=" . urlencode($row['name_prod']) . "'\"><i class='bi bi-arrow-right'></i></button>
                 <img src='" . BASE_URL . "/static/images/logo.png' alt='' id='product_img'>
@@ -64,7 +63,6 @@ function displayProducts($conn) {
         // handle the case where the statement preparation failed
         echo "Error: Unable to prepare statement";
     }
-}
 
 
 

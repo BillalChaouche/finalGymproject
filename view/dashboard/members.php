@@ -18,7 +18,7 @@
     
     <!-- this is the form for adding offer -->
     <form class="form-add-offer">
-        <button id="exit"><i class="bi bi-x-circle"></i></button>
+        <button id="exit" type="button"><i class="bi bi-x-circle"></i></button>
         <div class="title">
             <h1>Add an Offer</h1>
         </div>
@@ -27,20 +27,20 @@
                 <p>Name: 
                     <div class="req"></div>
                 </p>
-                <input type="text" placeholder="enter the offer's name" required id="add-name" >
+                <input type="text" placeholder="enter the offer's name" required id="add-name"  maxlength="30">
             </div>
             <div class="input-contact">
                 <div class="input-email">
                     <p>duration: 
                         <div class="req"></div>
                     </p>
-                    <input type="number" placeholder="enter the duration by days" required id="add-duration" >
+                    <input type="number" placeholder="enter the duration by days" required id="add-duration" oninput="limitInputLength(this, 4)">
                 </div>
                 <div class="input-phone">
                     <p>places: 
                         <div class="req"></div>
                     </p>
-                    <input type="number" placeholder="enter the number of places" required id="add-places" >
+                    <input type="number" placeholder="enter the number of places" required id="add-places" oninput="limitInputLength(this, 6)">
                 </div>
                 
             </div>
@@ -48,14 +48,14 @@
                 <p>sessions: 
                     <div class="req"></div>
                 </p>
-                <input type="number" placeholder="enter the number of sessions" required id="add-session" >
+                <input type="number" placeholder="enter the number of sessions" required id="add-session" oninput="limitInputLength(this, 4)">
             </div>
             
             <div class="color-options">
                 <p>theme color: </p>
                 <div class="color">
                 <div class="color-option">
-                <input type="radio" id="gold" name="color" value="gold">
+                <input type="radio" id="gold" name="color" value="gold" required>
                 <label for="gold" style="background: linear-gradient(90deg, rgba(255, 177, 82, 0.505) 0%, rgba(255, 251, 121, 0.671) 100%);"></label>
               </div>
               <div class="color-option">
@@ -83,7 +83,7 @@
             <div class="input-price">
                 <p>Offer price: 
                 </p>
-                <input type="number" placeholder="enter the price" id="add-price" >
+                <input type="number" placeholder="enter the price" id="add-price" oninput="limitInputLength(this, 10)" required>
             </div>
         </div>
         <div class="submit">
@@ -93,7 +93,11 @@
     </form>
     <section class="offers">
         <div class="header">
-            <h1 id="offer-title">Offers</h1>
+        <div class="title">
+        <h1 id="offer-title">Offers</h1>
+        <button id="show-offer"><i class="bi bi-chevron-down"></i></button>
+        </div>
+            
             <button  id="add"> <i class="bi bi-plus"></i></button>
             
         </div>
@@ -104,7 +108,7 @@
         <!-- form add member -->
 
     <form class="form-add-member">
-        <button id="exit-member"><i class="bi bi-x-circle"></i></button>
+        <button id="exit-member" type="button"><i class="bi bi-x-circle"></i></button>
         <div class="title">
             <h1>Add a Member</h1>
         </div>
@@ -113,14 +117,14 @@
                 <p>Name: 
                     <div class="req"></div>
                 </p>
-                <input type="text" placeholder="enter the member name" required id="add-name-member" >
+                <input type="text" placeholder="enter the member name" required id="add-name-member"  maxlength="30">
             </div>
             <div class="input-contact">
                 <div class="input-email">
                     <p>Email: 
                         <div class="req"></div>
                     </p>
-                    <input type="email" placeholder="enter member's email" required id="add-email-member" >
+                    <input type="email" placeholder="enter member's email" required id="add-email-member"  maxlength="50">
                 </div>
                 <div class="input-phone">
                     
@@ -129,7 +133,7 @@
             </div>
             <div class="input-offer">
                 <p>Offer:</p>
-            <select>
+            <select required>
                 <option data-id="none">free</option>
                 <?php echo $member_option ?>
             </select>
@@ -140,13 +144,13 @@
                     <p>Session: 
                         <div class="req"></div>
                     </p>
-                    <input type="number" placeholder="enter number of sessions" id="add-session-member" >
+                    <input type="number" placeholder="enter number of sessions" id="add-session-member" oninput="limitInputLength(this, 4)">
                 </div>
                 <div class="input-phone">
                     <p>Price: 
                         <div class="req"></div>
                     </p>
-                    <input type="number" placeholder="enter the total price"  id="add-price-member" >
+                    <input type="number" placeholder="enter the total price"  id="add-price-member" oninput="limitInputLength(this, 6)">
                 </div>
                 
             </div>
@@ -186,14 +190,14 @@
         </table>
     </section>
     <div class="delete-member" id="delete-m">
-            <p>Are you sure you want to delete this member from your gym</p>
+            <p>Are you sure you want to delete this member from your gym(an email will be sent to notify him)</p>
             <div class="choose-btn">
             <button id="cancel">cancel</button>
             <input type="submit" name="delete" value="delete" id="delete">
             </div>
             
         </div>
-
+    <script src="<?php echo BASE_URL?>/js/input.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="<?php echo BASE_URL?>/js/members.js"></script>
 </body>
